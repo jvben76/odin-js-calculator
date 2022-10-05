@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title> 
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id = 'body'>
+
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class='calculator' id  = 'calculator'> <!-- calculator container -->
+        <div class='display-container'> <!-- calculator screen -->
+        </div>
+        <div class = 'btns'> <!-- calculator buttons container -->
+            
+            <div class='values-controls-btns'> <!-- container for operands & calculator controls -->
+              
+                <div class='values row-controls'>
+                    <button class=' controls-btn' data-key = 'Backspace' value='ac' id = 'ac'  >AC<br>
+                        <sub style = 'font-size: 9px;'><span>backspace</span></sub>
+                    </button>
+
+                    <button class=' controls-btn ' data-key = 'n' value = 'sign'>+/-<br>
+                        <sub style = 'font-size: 9px; '><span>N</span></sub>
+                    </button>
+
+                    <button class=' controls-btn' data-key = 'p' value = 'modulo'>%<br>
+                        <sub style = 'font-size: 9px;'><span>P</span></sub>
+                    </button>
+                </div>
+
+                <div class='values values-row-1'>
+                    <button class='operand value-btn' data-key ='7' value = '7'>7<br>
+                        <sub style = 'font-size: 9px;'><span>7</span></sub>
+                    </button>
+
+                    <button class='operand value-btn' data-key ='8' value = '8'>8<br>
+                        <sub style = 'font-size: 9px;'><span>8</span></sub>
+                    </button>
+
+                    <button class='operand value-btn' data-key ='9' value = '9'>9<br>
+                        <sub style = 'font-size: 9px;'><span>9</span></sub>
+                    </button>
+                </div>
+
+                <div class='values values-row-2'>
+                    <button class='operand value-btn' data-key = '4' value = '4'>4<br>
+                        <sub style = 'font-size: 9px;'><span>4</span></sub>
+                    </button>
+
+                    <button class='operand value-btn' data-key = '5' value = '5'>5<br>
+                        <sub style = 'font-size: 9px;'><span>5</span></sub>
+                    </button>
+
+                    <button class='operand value-btn' data-key = '6' value = '6'>6<br>
+                        <sub style = 'font-size: 9px;'><span>6</span></sub>
+                    </button>
+                </div>
+
+                <div class='values values-row-3'>
+                    <button class='operand value-btn' data-key = '1' value = '1'>1<br>
+                        <sub style = 'font-size: 9px;'><span>1</span></sub>
+                    </button>
+                    
+                    <button class='operand value-btn' data-key = '2' value = '2'>2<br>
+                        <sub style = 'font-size: 9px;'><span>2</span></sub>
+                    </button>
+                    
+                    <button class='operand value-btn' data-key = '3' value = '3'>3<br>
+                        <sub style = 'font-size: 9px;'><span>3</span></sub>
+                    </button>
+                    
+                </div>
+
+                <div class='values values-row-4'>
+                    <button class='operand wide-btn value-btn' id = 'value-0-btn' data-key = '0' value = '0'>
+                        0<br><sub style = 'font-size: 9px;'><span>0</span></sub>
+                    </button>
+
+                    <button class='value-btn operand' id = 'dec-btn' data-key = '.' value = '.'>
+                        .<br><sub style = 'font-size: 9px;'><span>.</span></sub>
+                    </button>
+                </div>
+                
+            </div>
+
+            <div class='operator-btns'>
+                <button class='operator operator-btn' data-key = 'x' value = '*'>
+                    x<br><sub style = 'font-size: 9px;'><span>X</span></sub>
+                </button>
+
+                <button class='operator operator-btn' data-key = 'd' value = '/'>
+                    /<br><sub style = 'font-size: 9px;'><span>D</span></sub>
+                </button>
+
+                <button class='operator operator-btn' data-key = 'a' value = '+'>
+                    +<br><sub style = 'font-size: 9px;'><span>A</span></sub>
+                </button>
+
+                <button class='operator operator-btn' data-key = 's' value = '-'>
+                    -<br><sub style = 'font-size: 9px;'><span>S</span></sub>
+                </button>
+
+                <button class='result operator-btn'   data-key = 'Enter' value  = '='>
+                    =<br><sub style = 'font-size: 9px;'><span>enter</span></sub>
+                </button>
+            </div>
+
+        </div>
+
+     <div id = 'output' style = "height: 70vh; padding-left: 0; margin-left: -500px"></div>
+    </div>
+
+    <script src="script.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
+    </script>
+    <script type="text/javascript">
+  
+        // // Define the function 
+        // // to screenshot the div
+        // function takeshot() {
+        //     let div =
+        //         document.getElementById('body');
+  
+        //     // Use the html2canvas
+        //     // function to take a screenshot
+        //     // and append it
+        //     // to the output div
+        //     html2canvas(div).then(
+        //         function (canvas) {
+        //             document
+        //             .getElementById('output')
+        //             .appendChild(canvas);
+        //         })
+        // }
+    </script>
+</body>
+
+</html>
